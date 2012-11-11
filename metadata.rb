@@ -1,14 +1,13 @@
-name              "template-cookbook"
+name              "lastrun_handler"
 maintainer        "The Wharton School - The University of Pennsylvania"
-maintainer_email  "chef-admins@wharton.upenn.edu"
+maintainer_email  "bflad@wharton.upenn.edu"
 license           "Apache 2.0"
-description       "A cool description."
+description       "Installs and enables lastrun chef_handler."
 version           "0.1.0"
-recipe            "template-cookbook", "Short description of template-cookbook default recipe."
-recipe            "template-cookbook::alternate", "Short description of template-cookbook::alternate recipe."
+recipe            "lastrun_handler", "Installs and enables lastrun chef_handler."
 
-%w{ apache2 logrotate }.each do |d|
-  depends d
+%w{ chef_handler }.each do |cb|
+  depends cb
 end
 
 %w{ redhat ubuntu }.each do |os|

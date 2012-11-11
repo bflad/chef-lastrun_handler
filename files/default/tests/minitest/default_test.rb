@@ -1,7 +1,9 @@
 require File.expand_path('../support/helpers', __FILE__)
 
-describe_recipe "template-cookbook::default" do
-  include Helpers::TemplateCookbook
+describe_recipe "lastrun_handler::default" do
+  include Helpers::LastRunHandler
 
-  # do work, son.
+  it "creates lastrun handler" do
+    file("#{node['chef_handler']['handler_path']}/lastrun_update.rb").must_exist
+  end
 end
