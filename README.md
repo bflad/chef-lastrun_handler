@@ -29,6 +29,16 @@ None
 * Add `recipe[lastrun_handler]` to your node's run list
 * After a Chef client run, use knife-lastrun to check information
 
+### Using with whitelist-node-attrs
+
+Since the whitelist cookbook will override node.save, you need to ensure it has
+the `node['lastrun']` and `node['whitelist']` attributes saved. For example:
+    
+    "whitelist" => {
+      "lastrun" => true,
+      "whitelist" => true
+    }
+    
 ## Contributing
 
 Please use standard Github issues/pull requests.
